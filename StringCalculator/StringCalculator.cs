@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 namespace StringCalculator
 {
     public class StringCalculator
@@ -9,20 +11,8 @@ namespace StringCalculator
 
         internal static int Add(string input)
         {
-            if (input.Length <= 1)
-            {
-                return input != "" ? int.Parse(input) : 0;
-            }
-
             var elementsSeparated = input.Split(",", StringSplitOptions.RemoveEmptyEntries);
-            var result = 0;
-            
-            foreach (var element in elementsSeparated)
-            {
-                result += int.Parse(element);
-            }
-            
-            return result;
+            return input == "" ? 0 : elementsSeparated.Sum(int.Parse);
         }
     }
 }
