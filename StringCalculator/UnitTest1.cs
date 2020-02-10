@@ -26,12 +26,19 @@ namespace StringCalculator
         }
 
         [Test]
-        public void ShouldBeReturnTheAdditionOfReceiveNumbers()
+        public void ShouldBeReturnTheAdditionOfReceiveTwoNumbers()
         {
             var sum = StringCalculator.Add("1, 4");
 
             Assert.AreEqual(5, sum);
         }
+        
+        [Test]
+        public void ShouldBeReturnTheAdditionOfReceiveNumbers()
+        {
+            var sum = StringCalculator.Add("1, 4, 6, 1, 3");
 
+            Assert.AreEqual(15, sum);
+        }
     }
 }

@@ -13,12 +13,16 @@ namespace StringCalculator
             {
                 return input != "" ? int.Parse(input) : 0;
             }
+
+            var elementsSeparated = input.Split(",", StringSplitOptions.RemoveEmptyEntries);
+            var result = 0;
             
-            var inputArray = input.ToCharArray();
-            var a = inputArray[0].ToString();
-            var b = inputArray[^1].ToString();
+            foreach (var element in elementsSeparated)
+            {
+                result += int.Parse(element);
+            }
             
-            return int.Parse(a) + int.Parse(b);
+            return result;
         }
     }
 }
