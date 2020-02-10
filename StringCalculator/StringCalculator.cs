@@ -7,23 +7,18 @@ namespace StringCalculator
         {
         }
 
-        internal static int Calculator(string input)
+        internal static int Add(string input)
         {
+            if (input.Length <= 1)
+            {
+                return input != "" ? int.Parse(input) : 0;
+            }
             
-            if (input.Length > 1)
-            {
-                char[] inputArray = input.ToCharArray();
-                string a = inputArray[0].ToString();
-                string b = inputArray[inputArray.Length - 1].ToString();
-                return int.Parse(a) + int.Parse(b);
-            }
-
-            if (input != "")
-            {
-                return int.Parse(input);
-            }
-
-            return 0; 
+            var inputArray = input.ToCharArray();
+            var a = inputArray[0].ToString();
+            var b = inputArray[^1].ToString();
+            
+            return int.Parse(a) + int.Parse(b);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace StringCalculator
         [Test]
         public void ShouldBeReturnZeroWhenReceiveEmpty()
         {
-            int sum = StringCalculator.Calculator("");
+            var sum = StringCalculator.Add("");
 
             Assert.AreEqual(0, sum);
         }
@@ -20,7 +20,7 @@ namespace StringCalculator
         [Test]
         public void ShouldBeReturnTheSameReceiveNumber()
         {
-            int sum = StringCalculator.Calculator("1");
+            var sum = StringCalculator.Add("1");
 
             Assert.AreEqual(1, sum);
         }
@@ -28,7 +28,7 @@ namespace StringCalculator
         [Test]
         public void ShouldBeReturnTheAdditionOfReceiveNumbers()
         {
-            int sum = StringCalculator.Calculator("1, 4");
+            var sum = StringCalculator.Add("1, 4");
 
             Assert.AreEqual(5, sum);
         }
